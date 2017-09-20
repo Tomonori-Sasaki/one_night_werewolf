@@ -1,0 +1,22 @@
+<div class="main">
+  <div class="container">
+    <h2>Create New Role</h2>
+    <div class="btn">
+      <%= link_to 'Add New Role', new_role_path, class:"square_btn" %>
+      <%= link_to 'Home', "/", class:"square_btn" %>
+    </div>
+    <div class="pokemon">
+      <h2>Roles</h2>
+      <% @roles.each do |role| %>
+        <div class="character-icon">
+          <%= link_to image_tag("#{role.image}"), "#" %>
+          <p><%= role.name %></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="btn">
+      <%= link_to 'Delete', role_path(1), :method => :delete, class:"square_btn_red" %>
+      <%= link_to 'Delete All', roles_destroy_all_path, :method => :delete, class:"square_btn_red" %>
+    </div>
+  </div>
+</div>

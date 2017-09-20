@@ -1,0 +1,17 @@
+<div class="main">
+  <div class="container">
+    <h2>好きなキャラクターを選択してください</h2>
+    <div class="character">
+      <% images = ['sample1.png', 'sample2.png', 'sample3.png', 'sample4.png', 'sample5.png', 'sample6.png', 'sample7.png', 'sample8.png', 'sample9.png', 'sample10.png', 'sample11.png', 'sample12.png'] %>
+      <% images.each do |image| %>
+        <%= link_to image_tag(image), users_path(@user, image: image), :method => :post %>
+      <% end %>
+    </div>
+    <div class="btn">
+      <%= link_to '戻る', users_path, class:"square_btn" %>
+    </div>
+    <div class="maruc">
+      <p>&copy;<%= link_to 'eSports Runner', 'http://esports-runner.com/' %></p>
+    </div>
+  </div>
+</div>

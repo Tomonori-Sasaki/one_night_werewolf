@@ -1,0 +1,27 @@
+<div class="main">
+  <div class="container">
+    <h2>Enter the Information of the New Role</h2>
+    <div class="setting">
+      <%= form_for :role, url: roles_path do |f| %>
+      <p>
+       <%= f.text_field :name, placeholder: 'name' %>
+      </p>
+      <p>
+       <%= f.text_area :examination, placeholder: 'examination' %>
+      </p>
+      <p>
+       <%= f.number_field :team, placeholder: 'team' %>
+      </p>
+      <p>
+       <%= f.file_field :image, placeholder: 'image' %>
+      </p>
+      <p>
+       <%= f.submit 'Submit' %>
+      </p>
+      <% end %>
+    </div>
+    <div class="btn">
+      <%= link_to 'Back', roles_path, class:"square_btn" %>
+    </div>
+  </div>
+</div>

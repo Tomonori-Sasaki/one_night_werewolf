@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OneNightWerewolf</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+
+      <div class="header-logo">
+        <%= link_to("ワンナイト人狼", "/") %>
+      </div>
+      <ul class="header-menus">
+        <li>
+          <%= link_to("Role", roles_path) %>
+        </li>
+        <li>
+          <%= link_to("NewGame", users_destroy_all_path, :method => :delete) %>
+        </li>
+        <li>
+          <%= link_to("Continue", users_path) %>
+        </li>
+        <li>
+          <%= link_to("Record", users_record_path) %>
+        </li>
+      </ul>
+    </header>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+    <footer>
+      <ul>
+        <li>
+          <%= link_to("Created by Tomonori Sasaki", 'https://www.facebook.com/profile.php?id=100005307370876') %>
+        </li>
+      </ul>
+    </footer>
+
+  </body>
+</html>
